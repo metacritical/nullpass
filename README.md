@@ -33,8 +33,9 @@ We don't have a website. We're too *null* for that.
 ## Why NullPass?
 
 - **Size matters**: While LessPass weighs in at thousands of lines of Python, NullPass is just a few hundred lines of bash. That's a *null* difference in size!
-- **No dependencies**: No Python, no npm, no nothing. Just bash and standard Unix tools.
+- **Minimal dependencies**: Aside from Python 3 for PBKDF2, it's just bash and ubiquitous Unix tools.
 - **Stateless**: Like LessPass, NullPass doesn't store any passwords. It generates them on the fly.
+- **LessPass compatible**: Uses the same PBKDF2-HMAC-SHA256 derivation as the official LessPass CLI, so outputs match for identical inputs.
 - **Punny**: We're not afraid to make a *null* joke or two.
 
 ## Examples
