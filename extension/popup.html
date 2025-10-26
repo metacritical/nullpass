@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NullPass</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="nullpass-popup">
+    <header class="popup-header">
+      <div class="logo">
+        <span class="logo-icon">🔐</span>
+        <span class="logo-text">NullPass</span>
+      </div>
+      <div class="current-site" id="currentSite">Loading...</div>
+    </header>
+
+    <main class="popup-main">
+      <div class="tab-container">
+        <button class="tab-btn active" data-tab="generate">Generate</button>
+        <button class="tab-btn" data-tab="profiles">Profiles</button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+      </div>
+
+      <!-- Generate Tab -->
+      <div class="tab-content active" id="generate-tab">
+        <form id="generateForm">
+          <div class="form-group">
+            <label for="siteInput">Site:</label>
+            <input type="text" id="siteInput" readonly>
+          </div>
+          
+          <div class="form-group">
+            <label for="loginInput">Login:</label>
+            <input type="text" id="loginInput" placeholder="Enter username/email">
+          </div>
+          
+          <div class="form-group">
+            <label for="masterInput">Master Password:</label>
+            <input type="password" id="masterInput" placeholder="Enter master password">
+            <button type="button" class="toggle-password" data-target="masterInput">👁️</button>
+          </div>
+          
+          <div class="form-group">
+            <label for="lengthInput">Length:</label>
+            <input type="range" id="lengthInput" min="5" max="35" value="16">
+            <span class="length-display">16</span>
+          </div>
+          
+          <div class="options-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="lowercaseCheck" checked>
+              <span>Lowercase (a-z)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="uppercaseCheck" checked>
+              <span>Uppercase (A-Z)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="digitsCheck" checked>
+              <span>Digits (0-9)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="symbolsCheck" checked>
+              <span>Symbols (!@#$%^&*)</span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label for="excludeInput">Exclude Characters:</label>
+            <input type="text" id="excludeInput" placeholder="Characters to exclude">
+          </div>
+          
+          <div class="generated-password">
+            <label>Generated Password:</label>
+            <div class="password-display">
+              <input type="text" id="generatedPassword" readonly placeholder="Click generate to create password">
+              <button type="button" id="copyBtn" class="copy-btn">📋</button>
+            </div>
+          </div>
+          
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Generate Password</button>
+            <button type="button" id="saveProfileBtn" class="btn btn-secondary">Save Profile</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Profiles Tab -->
+      <div class="tab-content" id="profiles-tab">
+        <div class="profiles-header">
+          <h3>Saved Profiles</h3>
+          <button id="refreshProfilesBtn" class="btn btn-small">Refresh</button>
+        </div>
+        <div id="profilesList" class="profiles-list">
+          <p class="no-profiles">No saved profiles yet</p>
+        </div>
+      </div>
+
+      <!-- Settings Tab -->
+      <div class="tab-content" id="settings-tab">
+        <form id="settingsForm">
+          <div class="settings-section">
+            <h3>General Settings</h3>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="autoDetectCheck">
+                <span>Auto-detect password fields</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="defaultLengthInput">Default Length:</label>
+              <input type="number" id="defaultLengthInput" min="5" max="35" value="16">
+            </div>
+          </div>
+          
+          <div class="settings-section">
+            <h3>Default Options</h3>
+            <div class="options-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="defaultLowercaseCheck" checked>
+                <span>Include lowercase</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="defaultUppercaseCheck" checked>
+                <span>Include uppercase</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="defaultDigitsCheck" checked>
+                <span>Include digits</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="defaultSymbolsCheck" checked>
+                <span>Include symbols</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <div class="footer-links">
+        <a href="#" id="aboutLink">About</a>
+        <a href="#" id="helpLink">Help</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="nullpass-core.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
