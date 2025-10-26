@@ -13,7 +13,7 @@ Stop wasting your time synchronizing your encrypted vault. Remember one master p
 If you want to use NullPass in your terminal, just download the script and make it executable:
 
 ```bash
-wget https://raw.githubusercontent.com/yourusername/nullpass/main/nullpass
+wget https://raw.githubusercontent.com/metacritical/nullpass/main/nullpass
 chmod +x nullpass
 ./nullpass --help
 ```
