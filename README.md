@@ -68,7 +68,7 @@ Here's a sample invocation showing the prompt and resulting password:
 ```bash
 $ ./nullpass example.org alice -L 16
 Master Password: resilient-otter
-!u7FW%9mG4^bR1P?
+(,VZWqC;jy]P>4PF
 ```
 
 ## Todo
